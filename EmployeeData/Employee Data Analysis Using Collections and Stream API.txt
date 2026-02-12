@@ -1,0 +1,14 @@
+Case Study: Employee Data Analysis Using Collections and Stream API
+An organization maintains employee information such as employeeId, name, department, designation, salary, and yearsOfExperience in a List<Employee> collection.
+As part of a data analysis module, the management wants to generate insights from this collection using the Java Stream API.
+Tasks:
+1.	Calculate the average salary.
+2.	Find the employee who earns the highest salary.
+3.	Create a list of employee names whose salary is above ₹80,000.
+4.	Display the number of employees in each department.
+5.	Display all employees from the IT department who have more than 5 years of experience.
+
+Constraints:
+•	Use Java Collections and Stream API only.
+•	Do not use traditional loops (for, while).
+•	Use appropriate intermediate and terminal operations.
