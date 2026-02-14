@@ -1,0 +1,46 @@
+# Compiled class file
+*.class
+
+# Log file
+*.log
+
+# BlueJ files
+*.ctxt
+
+# Intellij IDEA
+.idea/
+*.iml
+
+# Android Studio
+.gradle/
+/local.properties
+/.idea/
+
+# NetBeans
+/nbproject/
+/build/
+
+# Maven
+/target/
+
+# Gradle
+/build/
+
+# Eclipse
+/bin/
+/target/
+
+# Jar files
+*.jar
+
+# Other files
+*.war
+*.ear
+*.class
+*.dll
+*.exe
+*.so
+# Misc
+*.DS_Store
+*.classpath
+*.project
