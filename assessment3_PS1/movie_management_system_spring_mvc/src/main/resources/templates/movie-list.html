@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Movie List</title>
+    <style>
+        table { width: 80%; margin: auto; border-collapse: collapse; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: center; }
+        th { background-color: #f2f2f2; }
+        a { text-decoration: none; padding: 5px 10px; background: #007bff; color: white; border-radius: 4px; }
+        .delete { background: #dc3545; }
+        .container { text-align: center; margin-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Movie Management System</h2>
+    <a th:href="@{/movies/new}">Add New Movie</a>
+    <br><br>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Director</th>
+            <th>Release Year</th>
+            <th>Rating</th>
+            <th>Actions</th>
+        </tr>
+
+        <tr th:each="movie : ${movies}">
+            <td th:text="${movie.id}"></td>
+            <td th:text="${movie.title}"></td>
+            <td th:text="${movie.genre}"></td>
+            <td th:text="${movie.director}"></td>
+            <td th:text="${movie.releaseYear}"></td>
+            <td th:text="${movie.rating}"></td>
+            <td>
+                <a th:href="@{/movies/edit/{id}(id=${movie.id})}">Edit</a>
+                <a th:href="@{/movies/delete/{id}(id=${movie.id})}" class="delete">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+</body>
+</html>
