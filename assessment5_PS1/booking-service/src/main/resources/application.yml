@@ -1,0 +1,48 @@
+server:
+  port: 0   # ⭐ random port (good for multiple instances)
+
+spring:
+  application:
+    name: booking-service
+
+  config:
+    import: optional:configserver:http://localhost:8888
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+  instance:
+    prefer-ip-address: true
+
+# ⭐ Feign timeout config (good practice)
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+
+# ⭐ Circuit Breaker configuration
+resilience4j:
+  circuitbreaker:
+    instances:
+      movieService:
+        sliding-window-size: 5
+        failure-rate-threshold: 50
+        wait-duration-in-open-state: 10s
+        permitted-number-of-calls-in-half-open-state: 3
+
+# ⭐ Actuator config
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+logging:
+  level:
+    org.springframework.cloud.openfeign: INFO
